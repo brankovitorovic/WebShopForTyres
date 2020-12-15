@@ -25,13 +25,6 @@ import lombok.RequiredArgsConstructor;
 @Service
 @RequiredArgsConstructor
 public class CartService {
-	/*
-	public List<PostDTO> findPostsFromUser(String username){
-		return postMapper.toDTOList(postRepository.findByCreatorUsername(username).
-				orElseThrow( () -> new InvalidUserInfoException("No posts from this user!")));
-	}*/
-	 
-	//ovako je ideja da iz cartitems izvuces sve za tog usera shoping cart
 
 	private final CartItemRepository cartItemRepository;
 	
