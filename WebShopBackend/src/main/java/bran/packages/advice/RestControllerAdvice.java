@@ -5,6 +5,8 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 
+import bran.packages.cart.exception.EmptyCartException;
+import bran.packages.cart.exception.NoSpecificTyreInDatabase;
 import bran.packages.user.exception.InvalidUserInfoException;
 import bran.packages.user.exception.InvalidUserRoleInfoException;
 import bran.packages.user.exception.ProblemWithDatabase;
@@ -37,6 +39,16 @@ public class RestControllerAdvice {
     @ExceptionHandler(ProblemWithDatabase.class)
     public ResponseEntity<ExceptionResponse> handleProblemWithDatabase(ProblemWithDatabase ex){
     	return new ResponseEntity<>(new ExceptionResponse(ex), HttpStatus.BAD_REQUEST);
+    }
+    
+    @ExceptionHandler(NoSpecificTyreInDatabase.class)
+    public ResponseEntity<ExceptionResponse> handleNoSpecificTyreInDatabase(NoSpecificTyreInDatabase ex){
+    	return new ResponseEntity<>(new ExceptionResponse(ex),HttpStatus.BAD_REQUEST);
+    }
+    
+    @ExceptionHandler(EmptyCartException.class)
+    public ResponseEntity<ExceptionResponse> handleEmptyCartException(EmptyCartException ex){
+    	return new ResponseEntity<>(new ExceptionResponse(ex),HttpStatus.BAD_REQUEST);
     }
     
 }
