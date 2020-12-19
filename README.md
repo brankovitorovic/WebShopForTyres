@@ -7,7 +7,7 @@
 <details>
   <summary>How to use</summary>
   
-#### Download the code and import in desired IDE,then in file WebShopForTyres/WebShopBackend/src/main/resources/application.properties change parametars for database and run it.
+#### Download the code and import in desired IDE,then in file src/main/resources/application.properties change parametars for database and run it.
 </details>
 
 <details>
